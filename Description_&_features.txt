@@ -1,0 +1,19 @@
+[Project Description]
+
+Motive Book Club app will be used by the club's members to log their readings. Each week, participating members read a book of their choice and leave a simple log, which can be seen by any member. Members can edit their log or like and favorite others.
+
+[Features - MVP]
+- User can sign up using their email, first and last name.
+- User can log in using their email and password.
+- User can view all logs created by members, including their own.
+- User can add a book log with details, including the title, author, and review.
+- User can edit/delete logs they created. 
+- User can like logs others created.
+- User can clip a book from a log they can view to their library.
+- User can edit/delete books in their library.
+
+[Features - advanced]
+- Admin user can add Book of the Month to the landing page.
+- When adding a log, use can look up the book using Google Books API. If a book is found, link to the Google Books page can be added to the log.
+- When adding a book to the library, use can add notes.
+- User can save a log as draft. Draft cannot be seen by others except for admins.
