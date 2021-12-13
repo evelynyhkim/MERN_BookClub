@@ -4,6 +4,7 @@ const app = express()
 const httpServer = require('http').createServer(app)
 const socket = require('socket.io')
 const Log = require('./models/log.model')
+const User = require('./models/user.model')
 require('dotenv').config()
 //e.g. const mySecret = process.env.JWT_SECRET;
 //in .env MY_SECRET_KEY = "my key"
@@ -56,18 +57,24 @@ io.on("connection", socket=>{
     
     socket.on("Liked", arg=>{
         console.log("Liked " + arg)
-        increaseLikes(arg)
-    })
-
-    function increaseLikes(id) {
-        Log.findOneAndUpdate({_id:id}, {$inc: {'likes': 1 }}, {new: true})
+        Log.findOneAndUpdate({_id:arg}, {$inc: {'likes': 1 }}, {new: true})
         .then(log => {
-            io.emit("UpdateLikes", {_id: id})//, likes: log.likes})
+            io.emit("UpdateLikes", {_id: arg})//, likes: log.likes})
         })
         .catch(err => {
             console.log(err)
         }) 
-    }
+    })
+
+    // function increaseLikes(id) {
+    //     Log.findOneAndUpdate({_id:id}, {$inc: {'likes': 1 }}, {new: true})
+    //     .then(log => {
+    //         io.emit("UpdateLikes", {_id: id})//, likes: log.likes})
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //     }) 
+    // }
 
     socket.on("disconnect", ()=>{
         console.log("client disconnected ")

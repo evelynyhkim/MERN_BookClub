@@ -7,7 +7,7 @@ function Header({userId, link, linkText, heading, log}){
     return (<>
         <div className="flexContainer">
             <h1 onClick={e=>navigate('/')}>Motive Book Club</h1>
-            {userId?<SignOut/>:
+            {userId?<p>Welcome, {localStorage.getItem("firstName")}!&nbsp;<SignOut/></p>:
                 (<button onClick={e=>navigate('/signin')}>Sign In</button>)}
         </div>
         <div className="navBar">

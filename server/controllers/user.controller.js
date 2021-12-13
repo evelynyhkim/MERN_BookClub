@@ -135,14 +135,14 @@ module.exports = {
             res.status(400).json(err)
         })
     },
-    increaseLikes: (id) => {
-        User.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})
-        .then(user => {
-            console.log(user)
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(400).json(err)
-        }) 
-    }
+    // increaseLikes: (id) => {
+    //     User.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})
+    //     .then(user => {
+    //         console.log(user)
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //         res.status(400).json(err)
+    //     }) 
+    // }
 }

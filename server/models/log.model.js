@@ -24,7 +24,7 @@ const LogSchema = new mongoose.Schema({
     },
     likes: {
         type: Number,
-        default: 1
+        default: 0
     }
 
 }, {timestamp: true})

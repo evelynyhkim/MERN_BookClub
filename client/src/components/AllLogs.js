@@ -36,11 +36,11 @@ function AllLogs() {
         //e.target.disabled = true
         socket.emit("Liked", likedId)
         //setRefreshToggle(!refreshToggle)
-        let newLogs = logs.map((item, index) => {
-            if(index===idx) return {likes: item.likes+=1, ...item}
-            else return item
-        })
-        setLogs(newLogs)
+        // let newLogs = logs.map((item, index) => {
+        //     if(index===idx) return {likes: item.likes+=1, ...item}
+        //     else return item
+        // })
+        // setLogs(newLogs)
     }
 
     function handleClip(e, clippedId){
