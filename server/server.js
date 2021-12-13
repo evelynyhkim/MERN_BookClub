@@ -43,7 +43,7 @@ const io=socket(httpServer, {
 io.on("connection", socket=>{
     console.log('new socket id: ' + socket.id)
     socket.on("DeleteRequest", arg=>{
-        console.log("Liked " + arg)
+        console.log("Delete requested: " + arg)
         Log.findByIdAndDelete(arg)
         .then(log => {
             console.log('deleteOne')
@@ -60,9 +60,9 @@ io.on("connection", socket=>{
     })
 
     function increaseLikes(id) {
-        Log.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})
+        Log.findOneAndUpdate({_id:id}, {$inc: {'likes': 1 }}, {new: true})
         .then(log => {
-            io.emit("UpdateLikes", {_id: id, plikes: log.plikes})
+            io.emit("UpdateLikes", {_id: id})//, likes: log.likes})
         })
         .catch(err => {
             console.log(err)

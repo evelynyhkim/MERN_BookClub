@@ -87,14 +87,14 @@ module.exports = {
             res.status(400).json(err)
         })
     },
-    increaseLikes: (id) => {
-        Log.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})
-        .then(log => {
-            console.log(log)
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(400).json(err)
-        }) 
-    }
+    // increaseLikes: (id) => {
+    //     Log.findByIdAndUpdate(id, {$inc: { likes: 1 }}, {new: true})
+    //     .then(log => {
+    //         console.log(log)
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //         res.status(400).json(err)
+    //     }) 
+    // }
 }

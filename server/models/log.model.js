@@ -21,6 +21,10 @@ const LogSchema = new mongoose.Schema({
     reviewDate: {
         type: Date,
         required: [true, 'Review date is required for a log']
+    },
+    likes: {
+        type: Number,
+        default: 1
     }
 
 }, {timestamp: true})

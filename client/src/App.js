@@ -20,7 +20,8 @@ function App() {
   const initialLog = {
     bookTitle: "",
     writerName: "",
-    review: ""
+    review: "",
+    likes: 0
   }
 
   const initialUser = {

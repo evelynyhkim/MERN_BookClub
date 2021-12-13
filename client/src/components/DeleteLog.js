@@ -10,7 +10,7 @@ function DeleteLog({log, callback}) {
 
 	function handleDelete(idToDelete) {
 		socket.emit("DeleteRequest", idToDelete)
-		navigate('/')
+		navigate('/logs/all')
 	}
 
 	return (<>

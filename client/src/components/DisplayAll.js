@@ -3,7 +3,7 @@ import {navigate, Link} from '@reach/router'
 import DeleteLog from "./DeleteLog"
 import {DateTime} from 'luxon'
 
-function DisplayAll({logs, handleLike}) {
+function DisplayAll({logs, handleLike, handleClip, refreshToggle}) {
     return (
         <table className='tableAll'>
             <thead>
@@ -13,6 +13,7 @@ function DisplayAll({logs, handleLike}) {
                     <th>Review</th>
                     <th>Name</th>
                     <th>Date</th>
+                    <th>Likes</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -24,12 +25,13 @@ function DisplayAll({logs, handleLike}) {
                         <td>{log.review}</td>
                         <td>{log.userId}</td>
                         <td>{DateTime.fromISO(log.reviewDate).toLocaleString(DateTime.DATETIME_SHORT)}</td>
+                        <td>{log.likes}</td>
                         <td>
                             {log.userId === localStorage.getItem("userId")?
                                 (<><button className="btnEdit" onClick={()=>navigate(`/logs/${log._id}/edit`)}>Edit</button>
                                 <DeleteLog log={log}/></>)
-                                :(<><button>Like</button>
-                                <button>Clip</button></>)
+                                :(<><button onClick={(e)=>handleLike(e, log.userId, idx)}>Like</button>
+                                <button onClick={(e)=>handleClip(e, log.userId)}>Clip</button></>)
                             }
                         </td>
                     </tr>
