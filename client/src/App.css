@@ -1,0 +1,91 @@
+.App {
+  margin: 0 auto;
+  padding-left: 20px;
+}
+/** Header **/
+.flexContainer {
+  display: flex;
+  width: 720px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap:wrap
+}
+.navBar {
+  justify-content: flex-start;
+}
+.navBar * {
+  margin-right: 20px;
+}
+.heading {
+  font-size: 1.2em;
+  color: #a0f;
+}
+/** AllLogs **/
+.tableAll {
+  border-collapse: collapse;
+}
+.tableAll tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.tableAll td, th {
+  border: 1px solid #111;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: #bbb;
+  color: white;
+}
+td {
+  padding: 3px 20px 3px 5px;
+}
+/** FormLog **/
+form {
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  width: 720px;
+}
+.formColumn {
+  flex: 1;
+}
+.textInput {
+	width: 300px;
+	border: solid 1px black;
+	height: 25px;
+	margin-right: 10px;
+}
+.textInputErr {
+	border: 1px red solid;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+}
+.errMsg {
+  color: red;
+}
+.submit {
+  background-color: blue;
+  color: white;
+  width: 120px;
+  padding: 3px 10px;
+}
+/** DisplayOne **/
+.logDetailContainer {
+  border: 1px solid black;
+  padding: 10px;
+  width: 720px;
+}
+.tableOne {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.btnDelete {
+  color: white;
+  background-color: #a99;
+}
+.btnEdit {
+  color: white;
+  background-color: #555;
+}

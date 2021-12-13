@@ -1,3 +1,22 @@
+user {
+    email,
+    firstName,
+    lastName,
+    password,
+    books: []
+    <role: admin or regular>
+}
+log {
+    date/time,
+    (user) _id,
+    book,
+    like
+    <isDraft>
+}
+book {
+    title,
+    log
+}
 [Project Description]
 
 Motive Book Club app will be used by the club's members to log their readings. Each week, participating members read a book of their choice and leave a simple log, which can be seen by any member. Members can edit their log or like and favorite others.
@@ -6,7 +25,7 @@ Motive Book Club app will be used by the club's members to log their readings. E
 - User can sign up using their email, first and last name.
 - User can log in using their email and password.
 - User can view all logs created by members, including their own.
-- User can add a book log with details, including the title, author, and review.
+- User can add a book log with details, including the title, log, and review.
 - User can edit/delete logs they created. 
 - User can like logs others created.
 - User can clip a book from a log they can view to their library.
