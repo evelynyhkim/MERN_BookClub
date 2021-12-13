@@ -5,7 +5,7 @@ import {navigate, Link} from '@reach/router'
 
 function SignOut(){
     function handleSignOut(e){
-        axios.get('http://localhost:8000/api/signout')
+        axios.post('http://localhost:8000/api/signout', {}, {withCredentials: true})
         .then(res=>{
             console.log(res.data)
             localStorage.removeItem("userId")
