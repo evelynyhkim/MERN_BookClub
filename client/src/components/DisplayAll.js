@@ -30,8 +30,8 @@ function DisplayAll({logs, handleLike, handleClip, refreshToggle}) {
                             {log.userId === localStorage.getItem("userId")?
                                 (<><button className="btnEdit" onClick={()=>navigate(`/logs/${log._id}/edit`)}>Edit</button>
                                 <DeleteLog log={log}/></>)
-                                :(<><button onClick={(e)=>handleLike(e, log.userId, idx)}>Like</button>
-                                <button onClick={(e)=>handleClip(e, log.userId)}>Clip</button></>)
+                                :(<><button onClick={(e)=>handleLike(e, log._id, idx)}>Like</button>
+                                <button onClick={(e)=>handleClip(e, log._id)}>Clip</button></>)
                             }
                         </td>
                     </tr>

@@ -44,8 +44,8 @@ function AllLogs() {
     }
 
     function handleClip(e, clippedId){
-        e.target.disabled = true
-        axios.post("http://localhost:8000/api/" + localStorage.getItem("userId") + "/" + clippedId)
+        //e.target.disabled = true
+        axios.post("http://localhost:8000/api/user/" + localStorage.getItem("userId") + "/" + clippedId)
         .then(res => {
             console.log(res.data)
             setLoaded(true)

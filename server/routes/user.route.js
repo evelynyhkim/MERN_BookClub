@@ -7,4 +7,5 @@ module.exports = (app) => {
     app.post('/api/signout', UserController.signOut)
     app.put('/api/users/:id/edit', UserController.updateOne)
     app.delete('/api/users/:id/delete', UserController.deleteOne)
+    app.post('/api/user/:id/:logId', UserController.addToLibrary)
 }

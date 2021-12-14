@@ -135,6 +135,17 @@ module.exports = {
             res.status(400).json(err)
         })
     },
+    addToLibrary: (req, res) => {
+        User.findByIdAndUpdate(req.params.id, {$push: {library: req.params.logId}}, {new:true})
+        .then(user => {
+            console.log('add to Library')
+            res.json(user)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(400).json(err)
+        })
+    }
     // increaseLikes: (id) => {
     //     User.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})
     //     .then(user => {
