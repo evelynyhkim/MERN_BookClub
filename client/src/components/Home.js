@@ -6,7 +6,7 @@ import '../App.css'
 
 function Home(){
     return (<>
-        <Header userId={localStorage.getItem("userId")}/>
+        <Header userId={localStorage.getItem("userId")} heading={"Welcome To Motive Book Club"}/>
         <div className='flexContainer'>
             <div>
                 <p>Book of the Month</p>

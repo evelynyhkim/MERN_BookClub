@@ -5,6 +5,7 @@ import {Router, navigate} from '@reach/router'
 import Home from './components/Home'
 import AllLogs from './components/AllLogs'
 import NewLog from './components/NewLog'
+import Library from './components/Library'
 import UpdateLog from './components/UpdateLog'
 import NewUser from './components/NewUser'
 import SignIn from './components/SignIn'
@@ -100,6 +101,7 @@ function App() {
           <AllLogs path="/logs/all"/>
           <NewLog path="/logs/new"/>
           <UpdateLog path="/logs/:id/edit"/>
+          <Library path="/library"/>
         </Router>
       </BookClubContext.Provider>
 

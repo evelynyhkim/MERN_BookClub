@@ -34,7 +34,7 @@ function SignIn({location}) {
 		})
 	}
 	return (<>
-        <Header/>
+        <Header heading={"Sign In"}/>
 		<p>{location?.state?.message}</p>
         <FormSignIn handleSubmit={handleSignIn} oneUser={""} signIn={signIn} setSignIn={setSignIn} submitText="Submit" errs={errs}/>
     </>)

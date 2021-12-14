@@ -29,10 +29,10 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minLength: [2, 'Password must be at least 2 characters long']
     },
-    library: {
-        type: Array,
-        default: []
-    }
+    library: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Log'
+    }]
 }, {timestamp: true})
 
 UserSchema.virtual("confirmPw")

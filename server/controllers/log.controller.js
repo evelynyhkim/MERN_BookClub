@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken")
 module.exports = {
     getAll: (req, res) => {
         Log.find()
+        .populate('userId')
         .then(logs => {
             console.log('getAll logs')
             res.json(logs)
@@ -17,7 +18,8 @@ module.exports = {
     createOne: (req, res) => {
         console.log('------ req: ' + req)
         const newLog = new Log(req.body)
-        //newLog.userId = jwt.decode(req.cookie.usertoken, {complete: true}).payload.id
+        //const decodedJwt = jwt.decode(req.cookie.usertoken, {complete: true})
+        //newLog.userId = decodedJwt.payload.id
         newLog.reviewDate = new Date()
         
         newLog.save()

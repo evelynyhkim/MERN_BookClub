@@ -4,15 +4,19 @@ const LogSchema = new mongoose.Schema({
     bookTitle: {
         type: String,
         required: [true, 'Book must have a title'],
-        minLength: [2, 'Book title must be at least 2 characters long'],
+        minLength: [2, 'Book title must be at least 2 characters long']
     },
     writerName: {
         type: String,
         required: [true, 'Writer must have a name'],
-        minLength: [2, 'Writer name must be at least 2 characters long'],
+        minLength: [2, 'Writer name must be at least 2 characters long']
     },
     review: {
-        type: String,
+        type: String
+    },
+    likes: {
+        type: Number,
+        default: 0
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -21,12 +25,7 @@ const LogSchema = new mongoose.Schema({
     reviewDate: {
         type: Date,
         required: [true, 'Review date is required for a log']
-    },
-    likes: {
-        type: Number,
-        default: 0
     }
-
 }, {timestamp: true})
 
 const Log = mongoose.model("Log", LogSchema)

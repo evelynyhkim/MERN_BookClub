@@ -57,7 +57,7 @@ function UpdateLog({id}) {
         	<Link to="/logs/new">Add a log</Link>
 		</>}
         {loaded && (<>
-			<Header/>
+			<Header heading={"Edit Log"}/>
 			<FormLog handleSubmit={handleUpdate} oneLog={log} log={log} setLog={setLog} submitText="Submit" errs={errs}/>
 		</>)}
     </>)

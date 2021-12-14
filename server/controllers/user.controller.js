@@ -145,6 +145,29 @@ module.exports = {
             console.log(err)
             res.status(400).json(err)
         })
+    },
+    deleteFromLibrary: (req, res) => {
+        User.findByIdAndUpdate(req.params.id, {$pull: {library: req.params.logId}}, {new:true})
+        .then(user => {
+            console.log('remove from Library')
+            res.json(user)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(400).json(err)
+        })
+    },
+    getLibrary: (req, res) => {
+        User.findById(req.params.id)
+        .populate('library')
+        .then(lib => {
+            console.log('get user library')
+            res.json(lib)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(400).json(err)
+        })
     }
     // increaseLikes: (id) => {
     //     User.findByIdAndUpdate(id, {$inc: { plikes: 1 }}, {new: true})

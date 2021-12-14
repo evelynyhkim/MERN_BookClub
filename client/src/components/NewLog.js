@@ -32,7 +32,7 @@ function NewLog() {
 		})
 	}
 	return (<>
-        <Header userId={localStorage.getItem("userId")}/>
+        <Header userId={localStorage.getItem("userId")} heading={"Add Log"}/>
         {localStorage.getItem('userId')?<FormLog handleSubmit={handleNew} oneLog={""} log={log} setLog={setLog} submitText="Submit" errs={errs}/>
 		:<p>Sign in to add a log</p>}
     </>)
